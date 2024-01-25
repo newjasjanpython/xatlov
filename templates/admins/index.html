@@ -1,0 +1,115 @@
+{% extends 'admins/base.html' %}
+{% load i18n %}
+
+{% block title %}
+	{% trans 'all' %}
+{% endblock title %}
+
+{% block content %}
+    <style>
+    .btn-link {
+        text-decoration: none;
+    }
+
+    .code-card {
+        border-radius: 14px;
+        overflow: hidden;
+        cursor: pointer;
+        transition: 0.2s cubic-bezier(0.95, 0.95, 0.94, 0.26);
+    }
+
+    .code-card:hover {
+        background-color: var(--color);
+    }
+
+    .code-card .card-body {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .code-card .card-body img {
+        width: 42%;
+        transition: 0.2s cubic-bezier(0.95, 0.95, 0.94, 0.26);
+    }
+
+    .code-card:hover .card-body img {
+        width: 32%;
+        filter: invert(100%) drop-shadow(0 0 6px white);
+    }
+
+    .code-card .card-body h1 {
+        position: absolute;
+        font-size: 16px;
+        width: 100%;
+        bottom: 0;
+        text-align: center;
+        padding: 4px 6px;
+    }
+
+    .code-card:hover .card-body h1 {
+        color: white;
+    }
+
+    .code-card .card-body .code {
+        position: absolute;
+        width: 60px;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        top: 0;
+        left: 0;
+        border-radius: 0 0 28px 0;
+    }
+
+    .code-card .card-body .elements-length {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: white;
+        border-radius: 0 0 0 14px;
+        transition: 0.3s all;
+    }
+
+    .code-card:hover .card-body .elements-length {
+        transform: scale(1.2);
+        box-shadow: -6px 6px 36px white;
+    }
+    </style>
+<div class="pagetitle">
+	<h1>{% trans 'all' %}</h1>
+	<nav>
+		<ol class="breadcrumb">
+			<li class="breadcrumb-item"><a href="/admin/">{% trans 'admin-title' %}</a></li>
+			<li class="breadcrumb-item active">{% trans 'all' %}</li>
+		</ol>
+	</nav>
+</div>
+
+<section class="section dashboard">
+    {% include 'admins/underbar.html' %}
+
+    <div class="row g-3">
+        {% for code in counts_by_codes %}
+        <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12">
+            <div class="card h-100 text-{{ page_code }} code-card" onclick="window.location = `/admin/list-problems?code={{ code.data.code }}{% if request.GET.filter %}&filter={{ request.GET.filter }}{% endif %}`;" style="--color: var(--bs-{{ page_code }});">
+                <div class="card-body">
+                    <img src="http://127.0.0.1:8080/static/img/{{ code.data.image }}" alt="{{ code.data.text }}" class="img-fluid"/>
+                    <h1>{{ code.data.text }}</h1>
+                    <span class="code bg-{{ page_code }}">{{ code.data.code }}</span>
+                    <span class="elements-length">{{ code.objects|length }}</span>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+{% endblock content %}

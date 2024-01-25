@@ -1,0 +1,32 @@
+{% load i18n %}
+<div class="d-flex mb-3 w-100 justify-content-start align-items-center" style="gap: 6px;">
+    <a class="btn btn-link" href="?no_filter=1">
+        <i class="bi bi-grid"></i>
+        <span>{% trans 'all' %}</span>
+    </a>
+
+    <a class="btn btn-link" href="?filter=no-date-given">
+        <i class="bi bi-hourglass-top"></i>
+        <span>{% trans 'no date given' %}</span>
+    </a>
+    
+    <a class="btn btn-link" href="?filter=on-progress">
+        <i class="bi bi-bookmarks"></i>
+        <span>{% trans 'on progress' %}</span>
+    </a>
+    
+    <a class="btn btn-link" href="?filter=finished">
+        <i class="bi bi-check2-all"></i>
+        <span>{% trans 'finished' %}</span>
+    </a>
+    
+    <a class="btn btn-link" href="?filter=over-deadline">
+        <i class="bi bi-clock"></i>
+        <span>{% trans 'over deadline' %}</span>
+    </a>
+    
+    <a class="btn btn-link" href="?filter=for-verify">
+        <i class="bi bi-check"></i>
+        <span>{% trans 'for verify' %}</span>
+    </a>
+</div>

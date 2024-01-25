@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+{% load i18n %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="/assets/style.css">
+    <link rel="stylesheet" href="/assets/bootstrap/css/bootstrap.min.css">
+    <script src="/assets/jquery/jquery.min.js"></script>
+    <script src="/assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+    
+    <main>
+        <div class="container py-5">
+            <form action="" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="row g-3">
+                    <div class="col-12">
+                        <div class="card bg-light shadow-lg">
+                            <div class="card-body">
+                                <div class="row g-3">
+                                    <div class="col-lg-6 col-sm-12">
+                                        <div class="label-text">
+                                            <input type="text" name="OrTY1z" maxlength="256" required="" id="id_OrTY1z">
+                                            <label for="id_OrTY1z">{% trans "house address" %}</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-sm-12">
+                                        <div>
+                                            <select name="uhz0cN" required="" id="id_uhz0cN">
+                                                <option value="xxxxxx" selected>{% trans "house economic and social position" %}</option>
+                                                <option value="T5Zrii">биринчи тоифа (кам таъминланган, эхтиёжманд ва даромади паст хонадонлар.)</option>
+                                                <option value="fDXevW">иккинчи тоифа (доимий даромадга эга, қўшимча даромад топиш истагидаги хонадонлар.)</option>
+                                                <option value="KpaP31">учинчи тоифа (иқтисодий аҳволи яхши ва ўзига тўқ хонадонлар.)</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div>
+                                            <input type="checkbox" name="NDoqjy" id="id_NDoqjy">
+                                            <label for="id_NDoqjy">{% trans "house problems" %}</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12">
+                        <div class="card bg-light shadow-lg">
+                            <div class="card-body">
+                                <div class="row g-3">
+                                    <div class="col-12">
+                                        <div class="label-text">
+                                            <input type="text" name="hB7sSi" maxlength="256" required="" id="id_hB7sSi">
+                                            <label for="id_hB7sSi">{% trans "applicant fio" %}</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="label-text">
+                                            <input type="date" name="pcPMf0" required="" id="id_pcPMf0">
+                                            <label for="id_pcPMf0">{% trans "applicant birthday" %}</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div>
+                                            <select name="MsaQKr" required="" id="id_MsaQKr">
+                                                <option value="0">{% trans "applicant gender" %}</option>
+                                                <option value="1">Эркак</option>
+                                                <option value="2">Аёл</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="label-text">
+                                            <input type="text" name="lXV0Ax" maxlength="256" required="" id="id_lXV0Ax">
+                                            <label for="id_lXV0Ax">{% trans "applicant contact" %}</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12">
+                        <div class="card bg-light shadow-lg">
+                            <div class="card-body">
+                                <div class="row g-3">
+                                    <div class="col-12">
+                                        <div>
+                                            <input type="checkbox" name="wplJMW" id="id_wplJMW">
+                                            <label for="id_wplJMW">{% trans "need energy efficient equipment" %}</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div>
+                                            <select name="Lwo3mi" id="id_Lwo3mi">
+                                                <option disabled >{% trans "energy efficient equipment installation budget" %}</option>
+                                                <option value="1">Ўз маблағига</option>
+                                                <option value="2">Имтиёзли кредитга</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="label-text">
+                                            <input type="number" name="kbuia9" value="0" min="0" required="" id="id_kbuia9">
+                                            <label for="id_kbuia9">{% trans "energy efficient equipment kw" %}</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12">
+                        <div class="card bg-light shadow-lg">
+                            <div class="card-body">
+                                <div class="row g-3">
+                                    <div class="col-12">
+                                        <div>
+                                            <input type="checkbox" name="wLVuSe" id="id_wLVuSe">
+                                            <label for="id_wLVuSe">{% trans "request for a loan" %}</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="label-text">
+                                            <input type="number" name="VANCTz" value="0" min="0" max="9223372036854775807" required="" id="id_VANCTz">
+                                            <label for="id_VANCTz">{% trans "load sum paid" %}</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div>
+                                            <select name="OA0yaU" id="id_OA0yaU">
+                                                <option disabled selected>{% trans "requester gender" %}</option>
+                                                <option value="1">Аёллар</option>
+                                                <option value="2">Ёшлар</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="label-text">
+                                            <textarea name="kYeOx4" cols="40" rows="10" id="id_kYeOx4"></textarea>
+                                            <label for="id_kYeOx4">{% trans "request purpose" %}</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-12">
+                        <div class="card bg-light shadow-lg">
+                            <div class="card-body">
+                                <div class="row g-3">
+                                    <div class="col-12">
+                                        <div>
+                                            <input type="checkbox" name="V0djcq" id="id_V0djcq">
+                                            <label for="id_V0djcq">{% trans "demand subsidy" %}</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div>
+                                            <select name="kwsAGh" id="id_kwsAGh">
+                                                <option disabled selected>{% trans "demanding gender" %}</option>
+                                                <option value="1">Аёллар</option>
+                                                <option value="2">Ёшлар</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="label-text">
+                                            <textarea name="quTj0L" cols="40" rows="10" maxlength="256" id="id_quTj0L"></textarea>
+                                            <label for="id_quTj0L">{% trans "demand purpose" %}</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12">
+                        <h3>Chet eldagi oila azolari</h3>
+                        <div class="row g-3 p-3 L3iXGb-models">
+                            <div class="col-12">
+                                <button class="btn btn-primary" id="cloneButton-L3iXGb" type="button">Yangi</button>
+                            </div>
+                            
+                            <div class="col-12 L3iXGb-model" id="model1">
+                                <div class="card bg-light shadow-lg">
+                                    <div class="card-body">
+                                        <div class="row g-3">
+                                            <div class="col-lg-6 col-sm-12">
+                                                <div class="label-text">
+                                                    <input type="text" data-name="jqfJ4u" maxlength="256" id="id_jqfJ4u_0" class="form-control jqfJ4u">
+                                                    <label for="id_jqfJ4u_0">{% trans "fullname of civil" %}</label>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-lg-6 col-sm-12">
+                                                <div class="label-text">
+                                                    <input type="date" data-name="GWUmHY" id="id_GWUmHY_1" class="form-control GWUmHY">
+                                                    <label for="id_GWUmHY_1">{% trans "birthday of civil" %}</label>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-12">
+                                                <div class="label-text">
+                                                    <textarea data-name="KzVEbd" cols="40" rows="10" id="id_KzVEbd_2" class="form-control KzVEbd"></textarea>
+                                                    <label for="id_KzVEbd_2">{% trans "purpose for being in foreign" %}</label>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-12 d-flex align-items-center justify-content-between">
+                                                <button class="btn btn-warning btn-save-L3iXGb" disabled type="button">Saqlash</button>
+                                                <button class="btn btn-danger" type="button">Ochirish</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="display: none;">
+                        <label for="id_L3iXGb">L3iXGb</label>
+                        <select name="L3iXGb" id="id_L3iXGb" multiple="">
+                        </select>
+                    </div>
+
+                    <div class="col-12">
+                        <h3>Muammolar ro'yhati</h3>
+                        <div class="row g-3 p-3 m9GgHo-models">
+                            <div class="col-12">
+                                <button class="btn btn-primary" id="cloneButton-m9GgHo" type="button">Yangi</button>
+                            </div>
+                            <div class="col-12 m9GgHo-model" id="model1">
+                                <div class="card bg-light shadow-lg">
+                                    <div class="card-body">
+                                        <div class="row g-3">
+                                            <div class="col-lg-6 col-sm-12">
+                                                <div class="label-text">
+                                                    <input type="text" data-name="mStccp" maxlength="256" id="id_mStccp_0" class="form-control mStccp">
+                                                    <label for="id_mStccp_0">{% trans "fullname of civil" %}</label>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-lg-6 col-sm-12">
+                                                <div class="label-text">
+                                                    <input type="date" data-name="dPmVJI" id="id_dPmVJI_1" class="form-control dPmVJI">
+                                                    <label for="id_dPmVJI_1">{% trans "birthday of civil" %}</label>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-12">
+                                                <div class="label-text">
+                                                    <textarea data-name="jZ4ndH" cols="40" rows="10" id="id_jZ4ndH_2" class="form-control jZ4ndH"></textarea>
+                                                    <label for="id_jZ4ndH_2">{% trans "appeal description or text" %}</label>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-12 d-flex align-items-center justify-content-between">
+                                                <button class="btn btn-warning btn-save-m9GgHo" disabled type="button">Saqlash</button>
+                                                <button class="btn btn-danger" type="button">Ochirish</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="display: none;">
+                        <label for="id_m9GgHo">M9GgHo</label>
+                        <select name="m9GgHo" id="id_m9GgHo" multiple="">
+                        </select>
+                    </div>
+
+                    <div class="col-12">
+                        <h3>Daftar azolari</h3>
+                        <div class="row g-3 p-3 d0Gawy-models">
+                            <div class="col-12">
+                                <button class="btn btn-primary" id="cloneButton-d0Gawy" type="button">Yangi</button>
+                            </div>
+                            
+                            <div class="col-12 d0Gawy-model" id="model1">
+                                <div class="card bg-light shadow-lg">
+                                    <div class="card-body">
+                                        <div class="row g-3">
+                                            <div class="col-12">
+                                                <div class="label-text">
+                                                    <input type="text" data-name="A3TP8D" maxlength="256" id="id_A3TP8D_0" class="form-control A3TP8D">
+                                                    <label for="id_A3TP8D_0">{% trans "fullname of civil" %}</label>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-12">
+                                                <div class="">
+                                                    <select data-name="aiJCTv" id="id_aiJCTv_1" class="form-control aiJCTv">
+                                                        <option value="none">{% trans "notebook type" %}</option>
+                                                        <option value="metal">Темир дафтар</option>
+                                                        <option value="famales">Аёллар дафтари</option>
+                                                        <option value="youth">Ёшлар дафтари</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-12 d-flex align-items-center justify-content-between">
+                                                <button class="btn btn-warning btn-save-d0Gawy" disabled type="button">Saqlash</button>
+                                                <button class="btn btn-danger" type="button">Ochirish</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="display: none;">
+                        <label for="id_d0Gawy">D0Gawy</label>
+                        <select name="d0Gawy" id="id_d0Gawy" multiple="">
+                        </select>
+                    </div>
+
+                    <div class="col-12">
+                        <button class="btn btn-primary">Yuborish</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </main>
+
+
+    <script src="/assets/script.js"></script>
+</body>
+</html>

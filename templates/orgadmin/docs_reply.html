@@ -1,0 +1,38 @@
+{% extends 'orgadmin/base.html' %}
+{% load i18n %}
+
+{% block title %}
+    {{ select_key_name }}
+{% endblock %}
+
+{% block content %}
+    <div class="pagetitle">
+        <h1>{{ object.mStccp }}</h1>
+        <nav>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/organization/">{% trans 'orgnization' %}</a></li>
+                <li class="breadcrumb-item"><a href="{{ before_url }}">{{ before_title }}</a></li>
+                <li class="breadcrumb-item active">{{ object.mStccp }}</li>
+            </ol>
+        </nav>
+    </div>
+
+    <div class="card">
+        <div class="card-body p-3">
+            <h1 class="h3">{% trans 'reply about finished' %}</h1>
+
+            <p><b>{% trans 'reply content' %}:</b> {{ object.dIyvXl }}</p>
+            <hr/>
+            <iframe src="{{ object.vKlZ9t.url }}#toolbar=0" class="w-100" id="page_pdf"></iframe>
+            <script>
+                function resizeScript() {
+                    document.getElementById('page_pdf').style.height = window.innerHeight + 'px';
+                }
+
+                resizeScript();
+
+                window.addEventListener('resize', () => { resizeScript(); });
+            </script>
+        </div>
+    </div>
+{% endblock %}

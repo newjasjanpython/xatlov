@@ -1,0 +1,87 @@
+{% extends 'admins/base.html' %}
+{% load i18n %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+
+    <style>
+    .change-object-data {
+        position: relative;
+        height: 32px;
+    }
+
+    .change-object-data .form-control {
+        height: 32px !important;
+        font-size: 14px;
+        padding-right: 32px;
+        box-shadow: none !important;
+    }
+
+    .change-object-data .btn-submit {
+        position: absolute;
+        width: 32px;
+        height: 32px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%);
+    }
+    </style>
+<div class="card">
+    <div class="card-body">
+        <ul class="nav nav-tabs nav-tabs-bordered d-flex" id="borderedTabJustified" role="tablist">
+            {% for section_number in objects.keys %}
+            <li class="nav-item flex-fill" role="presentation">
+                <button class="nav-link w-100 border-{{ page_code }} text-{{ page_code }} {% if forloop.counter == 1 %}active{% endif %}" id="section-{{ section_number }}-tab" data-bs-toggle="tab" data-bs-target="#section-{{ section_number }}" type="button" role="tab" tabindex="-{{ forloop.counter }}">
+                {{ section_number }} - {% trans 'section' %}
+                </button>
+            </li>
+            {% endfor %}
+        </ul>
+
+        <div class="tab-content pt-2">
+            {% for section_number, section_content in objects.items %}
+            <div class="tab-pane fade{% if forloop.counter == 1 %} active show{% endif %}" id="section-{{ section_number }}" role="tabpanel" aria-labelledby="section-{{ section_number }}-tab">
+                <table class="table datatable">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>{% trans 'fio' %}</th>
+                            <th data-type="date" data-format="YYYY/DD/MM">{% trans 'birthday' %}</th>
+                            <th>{% trans 'appeal description or text' %}</th>
+                            <th>{% trans 'deadline for appeal' %}</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    {% for object in section_content %}
+                    <tr>
+                    <td>{{ forloop.counter }}</td>
+                    <td>{{ object.mStccp }}</td>
+                    <td>{{ object.dPmVJI|date:"Y/m/d" }}</td>
+                    <td>{{ object.jZ4ndH }}</td>
+                    <td>
+                        {% if object.dgWV6p %}
+                            {{ object.dgWV6p }}
+                        {% else %}
+                            <div class="change-object-data" data-pk="{{ object.pk }}">
+                                <input type="text" placeholder="YYYY/MM/DD" class="form-control udate"/>
+                                <button type="button" class="btn btn-submit">
+                                    <i class="bi bi-check"></i>
+                                </button>
+                            </div>
+                        {% endif %}
+                    </td>
+                    </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}
